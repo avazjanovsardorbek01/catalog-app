@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 13",
+    "price": 799,
+    "image": "/iphone13.jpg",
+    "description": "Смартфон Apple с A15 Bionic"
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S22",
+    "price": 749,
+    "image": "/s22.jpg",
+    "description": "Флагман Samsung 2022 года"
+  },
+  {
+    "id": 3,
+    "name": "Google Pixel 6",
+    "price": 599,
+    "image": "/pixel6.jpg",
+    "description": "Камерафон от Google"
+  }
+]
