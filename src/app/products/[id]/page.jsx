@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./show.css"; // подключаем глобальные стили
+import "./show.css";
 
 const mockProducts = [
   {

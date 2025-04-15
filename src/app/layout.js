@@ -13,4 +13,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-// Compare this snippet from src/app/products/page.jsx:

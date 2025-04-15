@@ -2,15 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import "./globals.css"; // Подключаем глобальные стили
+import "./globals.css";
 
-// Mock данные для карусели и товаров
 const heroSlides = [
   {
     id: 1,
     title: "Новая коллекция смартфонов",
     subtitle: "Лучшие модели 2025 года",
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9", // Смартфон
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
     cta: "Купить сейчас",
   },
   {
@@ -18,46 +17,15 @@ const heroSlides = [
     title: "Скидки до 30%",
     subtitle: "Только этой неделей",
     image:
-      "https://img.freepik.com/free-photo/front-view-young-female-holding-writing-sale-nameplate-red_140725-154100.jpg?semt=ais_hybrid&w=740", // Скидки
+      "https://img.freepik.com/free-photo/front-view-young-female-holding-writing-sale-nameplate-red_140725-154100.jpg?semt=ais_hybrid&w=740",
     cta: "Посмотреть скидки",
   },
   {
     id: 3,
     title: "Бесплатная доставка",
     subtitle: "При заказе от 500$",
-    image: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514", // Доставка
+    image: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514",
     cta: "Условия доставки",
-  },
-];
-
-const featuredProducts = [
-  {
-    id: 1,
-    name: "iPhone 15 Pro",
-    price: 999,
-    image: "https://images.unsplash.com/photo-1603898037225-dc6f1f91bb16", // iPhone
-    badge: "New",
-  },
-  {
-    id: 2,
-    name: "Samsung Galaxy S23",
-    price: 849,
-    image: "https://images.unsplash.com/photo-1580910051076-78057c961cb0", // Samsung
-    badge: "Popular",
-  },
-  {
-    id: 3,
-    name: "MacBook Pro M2",
-    price: 1999,
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8", // MacBook
-    badge: "Top",
-  },
-  {
-    id: 4,
-    name: "AirPods Pro 2",
-    price: 249,
-    image: "https://images.unsplash.com/photo-1583337130417-3346a1b2a5da", // AirPods
-    badge: "Sale",
   },
 ];
 
@@ -66,7 +34,6 @@ export default function HomePage() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Автопереключение карусели
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -74,7 +41,6 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [currentSlide]);
 
-  // Анимация при загрузке
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -135,44 +101,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="featured-section animate-slideUp">
-        <h2 className="section-title">
-          <span>Популярные товары</span>
-        </h2>
-        <div className="products-grid">
-          {featuredProducts.map((product) => (
-            <div key={product.id} className="product-card">
-              {product.badge && (
-                <span
-                  className={`product-badge ${product.badge.toLowerCase()}`}
-                >
-                  {product.badge}
-                </span>
-              )}
-              <div className="product-image-container">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="product-image"
-                />
-                <div className="product-overlay">
-                  <button className="quick-view">Быстрый просмотр</button>
-                </div>
-              </div>
-              <div className="product-info">
-                <h3>{product.name}</h3>
-                <div className="product-price">${product.price}</div>
-                <button className="add-to-cart">В корзину</button>
-              </div>
-            </div>
-          ))}
-        </div>
-        <Link href="/products">
-          <button className="view-all-btn">Смотреть все товары →</button>
-        </Link>
-      </section>
-
       {/* Banner Section */}
       <section className="banner-section">
         <div className="banner-content animate-fadeIn">
@@ -224,7 +152,7 @@ export default function HomePage() {
           </div>
           <div className="category-card">
             <img
-              src="https://images.unsplash.com/photo-1583337130417-3346a1b2a5da"
+              src="https://айпаскаль.рф/wp-content/uploads/2020/12/thumb400.jpg"
               alt="Аксессуары"
             />
             <div className="category-overlay">
@@ -234,6 +162,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <Link href="/products">
+        <button className="view-all-btn">Смотреть все товары →</button>
+      </Link>
 
       {/* Newsletter */}
       <section className="newsletter-section">
